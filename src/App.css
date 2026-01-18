@@ -1,0 +1,485 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modern Design System */
+:root {
+  /* Colors */
+  --primary-50: #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5b4fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  --success-500: #10b981;
+  --danger-500: #ef4444;
+  --warning-500: #f59e0b;
+
+  /* Theme */
+  --primary-color: var(--primary-600);
+  --primary-hover: var(--primary-700);
+  --secondary-color: var(--gray-500);
+  --success-color: var(--success-500);
+  --danger-color: var(--danger-500);
+  --warning-color: var(--warning-500);
+  --background-color: var(--gray-50);
+  --card-background: #ffffff;
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --border-color: var(--gray-200);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 200ms;
+  --transition-slow: 300ms;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal) ease;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--card-background);
+  margin-bottom: var(--space-4);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  background-color: var(--primary-50);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-4) var(--space-5);
+  font-weight: 600;
+  color: var(--primary-700);
+}
+
+.card-body {
+  padding: var(--space-5);
+}
+
+/* Button Styling */
+.btn {
+  font-weight: 600;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal) ease;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Form Controls */
+.form-control {
+  border: 2px solid var(--border-color);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal) ease;
+  font-size: 0.875rem;
+  background-color: var(--card-background);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--primary-100);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--gray-400);
+}
+
+/* Graph Styling */
+.react-flow__node {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+  background: var(--card-background);
+  border: 2px solid var(--border-color);
+  padding: var(--space-4);
+  min-width: 200px;
+  cursor: move;
+  user-select: none;
+}
+
+.react-flow__node:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--primary-300);
+}
+
+.react-flow__node.dragging {
+  z-index: 1000;
+  box-shadow: var(--shadow-xl);
+}
+
+.react-flow__node.node-nearby {
+  transform: scale(1.05);
+  border-color: var(--success-500);
+  box-shadow: 0 0 0 2px var(--success-500);
+}
+
+.highlight-question {
+  animation: cardHighlight 0.5s ease-in-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes cardHighlight {
+  0% {
+    background-color: white !important;
+  }
+  50% {
+    background-color: #2196F3 !important;
+  }
+  100% {
+    background-color: white !important;
+  }
+}
+
+.react-flow__edge {
+  stroke-width: 2;
+}
+
+.react-flow__edge-path {
+  stroke: var(--primary-400);
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-400);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-500);
+}
+
+/* Animation Classes */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all var(--transition-normal) ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all var(--transition-normal) ease-in;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top: 4px solid var(--primary-color);
+  border-radius: var(--radius-full);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tooltip Styling */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: var(--gray-800);
+  color: white;
+  text-align: center;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all var(--transition-normal);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-lg);
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: var(--space-3);
+  }
+  
+  .card {
+    margin-bottom: var(--space-4);
+  }
+  
+  .btn {
+    padding: var(--space-2) var(--space-4);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--gray-900);
+    --card-background: var(--gray-800);
+    --text-primary: var(--gray-50);
+    --text-secondary: var(--gray-300);
+    --border-color: var(--gray-700);
+  }
+  
+  .card {
+    background-color: var(--card-background);
+  }
+  
+  .card-header {
+    background-color: var(--primary-900);
+    color: var(--primary-100);
+  }
+  
+  .form-control {
+    background-color: var(--card-background);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+  }
+  
+  .form-control:focus {
+    background-color: var(--card-background);
+    color: var(--text-primary);
+  }
+  
+  .react-flow__node {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+  }
+}
+
+.question-card {
+  transition: all 0.3s ease;
+  background-color: white;
+  border: 2px solid transparent;
+}
+
+.question-card.selected {
+  border-color: #2196F3;
+  background-color: #E3F2FD !important;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+}
+
+.question-card.highlight-question {
+  animation: card-highlight 1s ease-in-out;
+}
+
+@keyframes card-highlight {
+  0% {
+    background-color: white;
+    transform: scale(1);
+  }
+  25% {
+    background-color: #90CAF9;
+    transform: scale(1.02);
+  }
+  50% {
+    background-color: white;
+    transform: scale(1);
+  }
+  75% {
+    background-color: #90CAF9;
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: #E3F2FD;
+    transform: scale(1);
+  }
+}
+
+/* Override card default styles */
+.card.question-card {
+  transition: background-color 0.3s ease;
+  background-color: #ffffff !important;
+}
+
+.card.question-card.highlight-question {
+  animation: question-highlight 1s ease-in-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes question-highlight {
+  0% {
+    background-color: #ffffff !important;
+  }
+  50% {
+    background-color: #e3f2fd !important;
+  }
+  100% {
+    background-color: #ffffff !important;
+  }
+}
+
+/* Additional specificity for card body */
+.card.question-card .card-body {
+  background-color: inherit;
+}
+
+/* Reset background after animation */
+.card.question-card.highlight-question {
+  background-color: #ffffff !important;
+}
